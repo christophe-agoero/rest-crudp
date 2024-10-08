@@ -72,7 +72,7 @@ public class CharacterController {
      * @return CharacterDto
      */
     @GetMapping(value = CHARACTER_BY_ID, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<CharacterDto> findByKey(@PathVariable int id) {
+    public ResponseEntity<CharacterDto> findById(@PathVariable int id) {
         return ResponseEntity.ok(buildDtoFromEntity(characterService.findById(id)));
     }
 
@@ -88,7 +88,7 @@ public class CharacterController {
         var character = characterService.create(buildEntityFromCreateDto(characterCreateDto));
         return ResponseEntity
                 .created(URI.create(
-                                fromMethodCall(on(this.getClass()).findByKey(character.getId()))
+                                fromMethodCall(on(this.getClass()).findById(character.getId()))
                                         .build()
                                         .getPath()
                         )
@@ -133,7 +133,7 @@ public class CharacterController {
      * @return Void
      */
     @DeleteMapping(CHARACTER_BY_ID)
-    public ResponseEntity<Void> deleteByKey(@PathVariable int id) {
+    public ResponseEntity<Void> deleteById(@PathVariable int id) {
         characterService.delete(id);
         return ResponseEntity.noContent().build();
     }
