@@ -1,0 +1,16 @@
+<included>
+    <!-- fr.agoero -->
+    <logger additivity="false" level="INFO" name="fr.agoero">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <!-- SPRING -->
+    <logger level="INFO" name="org.springframework"/>
+    <!--HIBERNATE -->
+    <logger name="org.hibernate.SQL" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <!-- ROOT -->
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</included>

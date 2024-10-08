@@ -1,0 +1,19 @@
+# SPRING
+spring:
+  # APPLICATION
+  application:
+    name: rest-crudp-pro
+  # DATASOURCE
+  datasource:
+    url: jdbc:postgresql://localhost:5434/rest-crudp-pro-db
+    username: rest-crudp-pro-user
+    password: rest-crudp-pro-pwd
+    hikari:
+      idle-timeout: 30000
+      minimum-idle: 2
+      maximum-pool-size: 5
+  # JPA
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate

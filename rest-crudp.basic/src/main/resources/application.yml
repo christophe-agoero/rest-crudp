@@ -1,0 +1,27 @@
+# SERVER
+server:
+  port: 8066
+# SPRING
+spring:
+  # APPLICATION
+  application:
+    name: rest-crudp-basic
+  # DATASOURCE
+  datasource:
+    url: jdbc:postgresql://localhost:5433/rest-crudp-basic-db
+    username: rest-crudp-basic-user
+    password: rest-crudp-basic-pwd
+    hikari:
+      idle-timeout: 30000
+      minimum-idle: 2
+      maximum-pool-size: 5
+  # JPA
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  # MVC
+  mvc:
+    # Obligatoire si aucune classe avec @RestControllerAdvice n'étend ResponseEntityExceptionHandler
+    problemdetails:
+      enabled: true
